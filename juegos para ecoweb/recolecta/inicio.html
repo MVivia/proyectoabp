@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recoge la Basura</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #playground {
+        width: 400px;
+        height: 400px;
+        border: 2px solid #333;
+        position: relative;
+        margin: 20px auto;
+        overflow: hidden;
+    }
+    .basura {
+        width: 50px;
+        height: 50px;
+        background: url('https://emojicdn.elk.sh/🗑️') center/contain no-repeat;
+        position: absolute;
+        cursor: pointer;
+    }
+    #contador {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+<h1>Recoge la Basura</h1>
+<div id="contador">Basuras recogidas: <span id="contador-numero">0</span></div>
+<div id="playground"></div>
+<script>
+    var basurasRecogidas = 0;
+
+    function recogerBasura(event) {
+        var basura = event.target;
+        if (basura.classList.contains('basura')) {
+            basura.remove();
+            basurasRecogidas++;
+            document.getElementById('contador-numero').textContent = basurasRecogidas;
+            if (basurasRecogidas >= 15) {
+                felicitar();
+            }
+        }
+    }
+
+    function felicitar() {
+        var mensaje = document.createElement('div');
+        mensaje.textContent = "¡Felicidades! ¡Limpiaste nuestra área verde!";
+        mensaje.style.fontSize = "32px";
+        mensaje.style.color = "green";
+        document.body.appendChild(mensaje);
+    }
+
+    for (var i = 0; i < 15; i++) {
+        var basura = document.createElement('div');
+        basura.classList.add('basura');
+        basura.style.left = Math.random() * 350 + 'px';
+        basura.style.top = Math.random() * 350 + 'px';
+        document.getElementById('playground').appendChild(basura);
+    }
+
+    document.getElementById('playground').addEventListener('click', recogerBasura);
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imágenes y Audios</title>
+    <style>
+        body {
+          background-color: rgb(163, 229, 255);
+          font-size: 50px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        #content {
+            margin-top: 50px;
+        }
+        .clickable-image {
+            height: 200px;
+            width: 300px;
+            cursor: pointer;
+            border: 2px solid #00796b;
+            border-radius: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1>Haz clic en las imágenes para reproducir el audio</h1>
+        <img class="clickable-image" src="imagen1.jpg" alt="Image 1" data-audio="audio1.mp3">
+        <img class="clickable-image" src="imagen2.jpg" alt="Image 2" data-audio="audio2.mp3">
+        <img class="clickable-image" src="imagen3.jpg" alt="Image 3" data-audio="audio3.mp3">
+        <img class="clickable-image" src="imagen4.jpg" alt="Image 4" data-audio="audio4.mp3">
+        <img class="clickable-image" src="imagen5.png" alt="Image 5" data-audio="audio5.mp3">
+    </div>
+    <audio id="audio-player"></audio>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const images = document.querySelectorAll('.clickable-image');
+            const audioPlayer = document.getElementById('audio-player');
+
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    const audioSrc = image.getAttribute('data-audio');
+                    audioPlayer.src = audioSrc;
+                    audioPlayer.play();
+                });
+            });
+        });
+    </script>
+
+
+    <a href="acciones.html">Regresar</a>
+</body>
+</html>

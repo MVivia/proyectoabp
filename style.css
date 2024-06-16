@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+    header {
+        background-color: #063f04;
+        color: rgb(255, 255, 255);
+        padding: 10px 0;
+        text-align: center;
+    }
+
+h1{
+    font-size: 100px;
+   
+}
+header h1 {
+    margin: 0;
+}
+
+nav {
+    background-color: #A18262;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul.menu > li {
+    position: relative;
+    display: inline-block;
+}
+
+nav ul.menu > li > a {
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    text-decoration: none;
+}
+
+nav ul.menu > li > a:hover {
+    background-color: #e696ff;
+}
+
+nav ul.submenu {
+    display: none;
+    position: absolute;
+    background-color: #ce8aff;
+    min-width: 200px;
+    z-index: 1;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul.submenu li {
+    display: block;
+}
+
+nav ul.submenu li a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul.submenu li a:hover {
+    background-color: #f18dc1;
+}
+
+nav ul.menu > li:hover ul.submenu {
+    display: block;
+}
+
+main {
+    padding: 20px;
+}
+
+main section {
+    margin-bottom: 20px;
+}
+
+main section h2 {
+    color: #5623ff;
+    font-size: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea, form button {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0cea17;
+}
+
+
+#video-inicial {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#video-inicial video {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #4CAF50; /* Borde verde alrededor del video */
+    border-radius: 10px; /* Bordes redondeados */
+}
+p{
+    text-align: justify;
+    font-size: 25px;
+    
+}
